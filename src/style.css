@@ -1,0 +1,716 @@
+/* General Body and Container Styles */
+body {
+    font-family: Arial, sans-serif; /* Or 'Roboto', sans-serif if you link Google Fonts */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padded {
+    padding: 60px 0;
+}
+
+.gray-bg {
+    background-color: #f2f2f2;
+}
+
+/* Header Styles */
+header {
+    background-color: #1a4d2e; /* Dark green from sample image */
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo img {
+    height: 80px; /* Adjust as needed */
+    margin-right: 5px;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 25px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #aed9b1; /* Lighter green on hover */
+}
+
+.auth-buttons .btn {
+    margin-left: 10px;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none; /* For anchor tags acting as buttons */
+    display: inline-block; /* For anchor tags acting as buttons */
+    text-align: center; /* For anchor tags acting as buttons */
+}
+
+.btn-primary {
+    background-color: #72E09F; /* Light green from sample */
+    color: #1a4d2e; /* Dark green text */
+}
+
+.btn-primary:hover {
+    background-color: #aed9b1; /* Slightly lighter primary */
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-light {
+    background-color: #fff;
+    color: #1a4d2e;
+}
+
+.btn-light:hover {
+    background-color: #eee;
+}
+
+.btn-green {
+    background-color: #4CAF50; /* A standard green */
+    color: #fff;
+}
+
+.btn-green:hover {
+    background-color: #45a049;
+}
+
+/* Hero Section */
+.hero-section {
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero-buttons .btn {
+    margin: 0 10px;
+}
+
+/* Experience the Difference (Features Grid) */
+#experience-difference h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #1a4d2e;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    text-align: center;
+}
+
+.feature-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    flex: 1 1 300px; /* Allows items to grow/shrink, with a base of 300px */
+    max-width: 350px;
+}
+
+.feature-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 1.5em;
+    color: #1a4d2e;
+    margin-bottom: 15px;
+}
+
+/* About Section */
+.about-section {
+    background-color: #1a4d2e; /* Dark green from sample */
+    color: #fff;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.about-image {
+    flex: 1 1 400px;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+    flex: 1 1 500px;
+}
+
+.about-text h2 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: #72E09F; /* Light green */
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+/* Membership Benefits */
+#membership-benefits h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #1a4d2e;
+}
+
+.benefits-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    text-align: center;
+}
+
+.benefit-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    flex: 1 1 250px;
+    max-width: 280px;
+}
+
+.benefit-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.benefit-item h3 {
+    font-size: 1.4em;
+    color: #1a4d2e;
+    margin-bottom: 10px;
+}
+
+/* Events and Testimonials */
+.events-testimonials-grid {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.upcoming-events,
+.member-testimonials {
+    flex: 1 1 45%; /* Distribute space evenly */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.upcoming-events h3,
+.member-testimonials h3 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: #1a4d2e;
+    text-align: center;
+}
+
+.event-item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #eee;
+}
+
+.event-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.event-item h4 {
+    font-size: 1.3em;
+    color: #4CAF50;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.event-item h4 + p {
+    font-size: 0.95em;
+    color: #666;
+}
+.event-item span {
+    font-weight: bold;
+    color: #1a4d2e;
+    white-space: nowrap; /* Prevent date from wrapping */
+}
+
+.testimonial-item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #eee;
+}
+
+.testimonial-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.testimonial-avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #72E09F;
+    color: #1a4d2e;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    float: left; /* Float avatar */
+    margin-right: 15px;
+}
+
+.testimonial-item p {
+    margin: 0;
+    font-style: italic;
+    font-size: 1.05em;
+    overflow: hidden; /* Clear float */
+}
+
+.testimonial-author {
+    margin-top: 10px;
+    text-align: right;
+    font-weight: bold;
+    color: #555;
+    clear: both; /* Clear float */
+}
+
+/* Golf Course Panorama */
+.golf-course-panorama {
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Adjust height as needed */
+    width: 100%;
+    margin-top: 60px; /* Space from section above */
+    margin-bottom: 60px; /* Space from section below */
+    display: block; /* Ensure it takes up space */
+}
+
+/* Golf History & Glossary */
+#history h2, #glossary h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #1a4d2e;
+}
+
+#history p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.glossary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.glossary-item {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.glossary-item h4 {
+    font-size: 1.4em;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.glossary-item p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.contact-form .btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+}
+
+/* Footer */
+footer {
+    background-color: #1a4d2e;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+}
+
+footer p {
+    margin: 0 0 10px 0;
+}
+
+.footer-links a {
+    color: #aed9b1;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+/* Forms Overlay (Sign In, Register, Forgot Password) */
+.forms-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.auth-form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    max-width: 450px;
+    width: 90%;
+    position: relative;
+    text-align: center;
+    display: none; /* Hidden by default, shown by JS */
+}
+
+.auth-form h3 {
+    font-size: 2em;
+    color: #1a4d2e;
+    margin-bottom: 30px;
+}
+
+.auth-form .form-group label {
+    text-align: left;
+}
+
+.auth-form .btn {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.auth-form p {
+    margin-top: 15px;
+    font-size: 0.95em;
+}
+
+.auth-form p a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.auth-form p a:hover {
+    text-decoration: underline;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    header nav ul li {
+        margin: 0 10px 10px 10px;
+    }
+
+    .auth-buttons {
+        margin-top: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image,
+    .about-text {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-padded {
+        padding: 40px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .hero-buttons .btn {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+    }
+
+    .features-grid,
+    .benefits-grid,
+    .events-testimonials-grid,
+    .glossary-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-item,
+    .benefit-item {
+        max-width: 90%;
+        flex-basis: auto;
+    }
+
+    .upcoming-events,
+    .member-testimonials {
+        flex: 1 1 100%;
+        max-width: 90%;
+    }
+
+    .testimonial-avatar {
+        float: none;
+        margin: 0 auto 15px auto;
+    }
+    .testimonial-item p {
+        overflow: visible; /* Adjust for centered avatar */
+    }
+    .testimonial-author {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+    .logo img {
+        height: 30px;
+    }
+    header nav ul li {
+        margin: 0 5px 10px 5px;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-content p {
+        font-size: 0.9em;
+    }
+
+    .feature-item,
+    .benefit-item {
+        padding: 20px;
+    }
+
+    .feature-item h3,
+    .benefit-item h3 {
+        font-size: 1.3em;
+    }
+
+    .about-text h2 {
+        font-size: 2.2em;
+    }
+
+    .upcoming-events h3,
+    .member-testimonials h3 {
+        font-size: 1.8em;
+    }
+
+    .event-item h4 {
+        font-size: 1.2em;
+    }
+
+    .glossary-item h4 {
+        font-size: 1.3em;
+    }
+
+    .auth-form {
+        padding: 30px;
+    }
+
+    .auth-form h3 {
+        font-size: 1.8em;
+    }
+}

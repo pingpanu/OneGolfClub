@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Golf Club - Track Your Game</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="icon" href="images/ogc_title.png" type="image/x-icon">
+    </head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="images/logo.png" alt="One Golf Club Logo">
+                <span>OneGolfClub</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#experience-difference">Services</a></li>
+                    <li><a href="#history">History</a></li>
+                    <li><a href="#glossary">Golf Glossary</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-secondary" onclick="showForm('signInForm')">Sign In</button>
+                <button class="btn btn-primary" onclick="showForm('registerForm')">Register</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section" style="background-image: url('images/image_panorama1.jpg');">
+            <div class="container hero-content">
+                <h1>OneGolfClub</h1>
+                <p>"Track Your Game with One Golf Club"</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-light" onclick="showForm('signInForm')">Member Login</button>
+                    <button class="btn btn-green" onclick="showForm('registerForm')">Become a Member</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience-difference" class="section-padded">
+            <div class="container">
+                <h2>XPerience the Difference</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <img src="images/hi_card.png" alt="Championship Courses Icon">
+                        <h3>Handicap Certificate</h3>
+                        <p>Experience our handicap management system.</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="images/profiles.gif" alt="Exclusive Membership Icon">
+                        <h3>Exclusive Membership</h3>
+                        <p>Our member can manages own golfer info and enjoy premium benefits and services.</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="images/scoreentry.png" alt="Performance Tracking Icon">
+                        <h3>Performance Tracking</h3>
+                        <p>Track your round progress with our advanced scoring and round recording.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section-padded about-section">
+            <div class="container about-content">
+                <div class="about-image">
+                    <img src="images/ogc.png" alt="Golfer on course">
+                </div>
+                <div class="about-text">
+                    <h2>Welcome to OneGolfClub</h2>
+                    <p>One Golf Club offers virtual club experience with our state-of-the-art facilities, and exclusive member benefits. Whether you're a seasoned pro or just starting your golfing journey, we provide the perfect environment to improve your game and enjoy the sport.</p>
+                    <p>Our club features for Amateur golfers to record their scores in real-time. With advanced algorithms, it calculates your handicap index accurately, ensuring you have a precise understanding of your skill level., practice facilities, professional instruction, and a vibrant community of golf enthusiasts. Join us and elevate your golfing experience to new heights.</p>
+                    <a href="#membership-benefits" class="btn btn-green">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="membership-benefits" class="section-padded">
+            <div class="container">
+                <h2>Membership Benefits</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <img src="images/ogc_title1.png" alt="Unlimited Golf Icon">
+                        <h3>Unlimited Golf</h3>
+                        <p>Play as much as you want on our championship courses</p>
+                    </div>
+                    <div class="benefit-item">
+                        <img src="images/scorecard.jpg" alt="Member Events Icon">
+                        <h3>Member Events</h3>
+                        <p>Exclusive tournaments and social gatherings</p>
+                    </div>
+                    <div class="benefit-item">
+                        <img src="images/ogc_title.png" alt="Pro Instruction Icon">
+                        <h3>Pro Instruction</h3>
+                        <p>Access to lessons from PGA professionals</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="events-testimonials" class="section-padded gray-bg">
+            <div class="container events-testimonials-grid">
+                <div class="upcoming-events">
+                    <h3>OneGolf's Day Event's coming Events</h3>
+                    <div class="event-item">
+                        <h4>Summer Championship</h4>
+                        <p>A 3-day tournament with amazing prizes</p>
+                        <span>June 15-17</span>
+                    </div>
+                    <div class="event-item">
+                        <h4>Twilight Golf Series</h4>
+                        <p>Evening rounds with dinner included</p>
+                        <span>Every Friday</span>
+                    </div>
+                    <div class="event-item">
+                        <h4>Junior Golf Camp</h4>
+                        <p>Week-long training for young golfers</p>
+                        <span>July 10-14</span>
+                    </div>
+                </div>
+                <div class="member-testimonials">
+                    <h3>Member Testimonials</h3>
+                    <div class="testimonial-item">
+                        <div class="testimonial-avatar">JD</div>
+                        <p>"The course conditions are always impeccable, and the staff goes above and beyond to make every visit special."</p>
+                        <p class="testimonial-author">- John Doe, Member since 2018</p>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="testimonial-avatar">SM</div>
+                        <p>"The handicap tracking system has helped me improve my game tremendously. I've dropped 5 strokes in just one season!"</p>
+                        <p class="testimonial-author">- Sarah Miller, Member since 2020</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="golf-course-panorama" class="golf-course-panorama" style="background-image: url('images/image_8bffd5.jpg');">
+        </section>
+
+        <section id="history" class="section-padded">
+            <div class="container">
+                <h2>Golf History</h2>
+                <p>Golf's origins are generally traced back to the 15th century in Scotland. The game quickly gained popularity, leading to the establishment of various golf clubs and the formalization of rules. Early golf was often played with rudimentary equipment, but over centuries, the sport evolved into the sophisticated game we know today, with advanced equipment, intricate course designs, and global tournaments. Key milestones include the invention of the gutta-percha ball in the mid-19th century and the steel shaft in the early 20th century, both significantly impacting the game's playability and reach. Major championships like The Open Championship, Masters Tournament, U.S. Open, and PGA Championship are testament to golf's enduring appeal and rich history.</p>
+                <p>The game's development is also marked by the contributions of legendary players, course architects, and innovators who continually pushed the boundaries of the sport. From the links courses of Scotland to the lush, manicured greens across the world, golf continues to captivate millions, blending athleticism, strategy, and respect for tradition.</p>
+            </div>
+        </section>
+
+        <section id="glossary" class="section-padded gray-bg">
+            <div class="container">
+                <h2>Golf Glossary</h2>
+                <div class="glossary-grid">
+                    <div class="glossary-item">
+                        <h4>Birdie</h4>
+                        <p>A score of one stroke under par on a hole.</p>
+                    </div>
+                    <div class="glossary-item">
+                        <h4>Bogey</h4>
+                        <p>A score of one stroke over par on a hole.</p>
+                    </div>
+                    <div class="glossary-item">
+                        <h4>Eagle</h4>
+                        <p>A score of two strokes under par on a hole.</p>
+                    </div>
+                    <div class="glossary-item">
+                        <h4>Fore!</h4>
+                        <p>A warning shouted when there is a danger of hitting other players or spectators with a golf ball.</p>
+                    </div>
+                    <div class="glossary-item">
+                        <h4>Handicap</h4>
+                        <p>A numerical measure of a golfer's ability, used to allow players of different skill levels to compete against each other fairly.</p>
+                    </div>
+                    <div class="glossary-item">
+                        <h4>Par</h4>
+                        <p>The predetermined number of strokes that a skilled golfer should take to complete a hole, or a round.</p>
+                    </div>
+                    <div class="glossary-item">
+                        <h4>Putt</h4>
+                        <p>A shot played on the green with a putter, intended to roll the ball into the hole.</p>
+                    </div>
+                    <div class="glossary-item">
+                        <h4>Rough</h4>
+                        <p>The areas of natural, unmowed grass and other obstacles on a golf course, typically alongside the fairway.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-padded">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>Have questions or want to learn more about One Golf Club? Reach out to us!</p>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-green">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <div id="formsOverlay" class="forms-overlay" onclick="hideForms()">
+            <div id="signInForm" class="auth-form" onclick="event.stopPropagation()">
+                <h3>Sign In</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="signin-email">Email:</label>
+                        <input type="email" id="signin-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signin-password">Password:</label>
+                        <input type="password" id="signin-password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-green">Sign In</button>
+                    <p><a href="#" onclick="showForm('forgotPasswordForm'); event.preventDefault();">Forgot Password?</a></p>
+                    <p>Don't have an account? <a href="#" onclick="showForm('registerForm'); event.preventDefault();">Register here</a></p>
+                </form>
+                <button class="close-btn" onclick="hideForms()">X</button>
+            </div>
+
+            <div id="registerForm" class="auth-form" onclick="event.stopPropagation()">
+                <h3>Register</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="register-name">Full Name:</label>
+                        <input type="text" id="register-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email:</label>
+                        <input type="email" id="register-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Password:</label>
+                        <input type="password" id="register-password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm-password">Confirm Password:</label>
+                        <input type="password" id="register-confirm-password" name="confirm_password" required>
+                    </div>
+                    <button type="submit" class="btn btn-green">Register</button>
+                    <p>Already have an account? <a href="#" onclick="showForm('signInForm'); event.preventDefault();">Sign In</a></p>
+                </form>
+                <button class="close-btn" onclick="hideForms()">X</button>
+            </div>
+
+            <div id="forgotPasswordForm" class="auth-form" onclick="event.stopPropagation()">
+                <h3>Forgot Password</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="forgot-email">Enter your email:</label>
+                        <input type="email" id="forgot-email" name="email" required>
+                    </div>
+                    <button type="submit" class="btn btn-green">Reset Password</button>
+                    <p>Remember your password? <a href="#" onclick="showForm('signInForm'); event.preventDefault();">Sign In</a></p>
+                </form>
+                <button class="close-btn" onclick="hideForms()">X</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 One Golf Club. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showForm(formId) {
+            document.getElementById('formsOverlay').style.display = 'flex';
+            document.getElementById(formId).style.display = 'block';
+
+            // Hide other forms
+            const forms = ['signInForm', 'registerForm', 'forgotPasswordForm'];
+            forms.forEach(id => {
+                if (id !== formId) {
+                    document.getElementById(id).style.display = 'none';
+                }
+            });
+        }
+
+        function hideForms() {
+            document.getElementById('formsOverlay').style.display = 'none';
+            document.getElementById('signInForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('forgotPasswordForm').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
