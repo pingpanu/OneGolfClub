@@ -498,7 +498,7 @@ footer p {
     color: #fff;
 }
 
-/* Forms Overlay (Sign In, Register, Forgot Password) */
+/* Registration form and Log-in form*/
 .forms-overlay {
     display: none; /* Hidden by default */
     position: fixed;
@@ -513,7 +513,7 @@ footer p {
 }
 
 .auth-form {
-    background-color: #fff;
+    background-color: white;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -521,7 +521,6 @@ footer p {
     width: 90%;
     position: relative;
     text-align: center;
-    display: none; /* Hidden by default, shown by JS */
 }
 
 .auth-form h3 {
