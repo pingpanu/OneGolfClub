@@ -144,8 +144,3 @@ vite.config.ts.timestamp-*
 
 # Gitignore files
 .gitignore
-
-# Temporary rules, to be removed later
-routes
-models
-server.js
