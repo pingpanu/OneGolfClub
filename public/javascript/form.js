@@ -2,7 +2,7 @@ const formTemplates = {
     signInForm: `
         <div id="signInForm" class="auth-form" onclick="event.stopPropagation()">
             <h3>Sign In</h3>
-            <form>
+            <form id="signin-form" onsubmit="handleSignIn(event)">
                 <div class="form-group">
                     <label for="signin-email">Email:</label>
                     <input type="email" id="signin-email" name="email" required>
@@ -74,6 +74,22 @@ window.hideForms = function() {
     overlay.innerHTML = '';
 }
 
+window.handleSignIn = function(event) {
+    event.preventDefault();
+
+    const user_email = document.getElementById('signin-email').value;
+    const user_password = document.getElementById('signin-password').value;
+
+    const validUser = "useruser@hotmail.com";
+    const validPassword = "password";
+
+    if (user_email === validUser && user_password === validPassword) {
+        window.location.href = "/user.html";
+    } else {
+        alert("Invalid email or password. Please try again.");
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('[data-form]').forEach(button => {
         button.addEventListener('click', function () {
@@ -84,3 +100,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('formsOverlay').addEventListener('click', hideForms);
 });
+

@@ -1,0 +1,29 @@
+.profile {
+    display: flex;
+    margin-left: 10px;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+}
+
+.user-page {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    min-height: 100vh;
+}
+
+.user-menu {
+    background-color: #1a4d2e;
+    color: white;
+    border: solid 5px #c4b056;
+}
+
+.user-dynamic-content {
+    border: solid 5px #c4b056;
+}
