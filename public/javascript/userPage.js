@@ -26,53 +26,68 @@ const profileHTML = () => `
             </div>
         `;
 
-document.addEventListener('DOMContentLoaded', function () {
-    const dynamicContent = document.getElementById('dynamic-content');
-
-    dynamicContent.innerHTML = profileHTML();
-
-    document.getElementById('profile').addEventListener('click', function () {
-        dynamicContent.innerHTML = profileHTML();
-    });
-
-    document.getElementById('roundEntry').addEventListener('click', function () {
-        dynamicContent.innerHTML = `
+const roundEntryHTML = () => `
         <div class="scorecard-container">
-                <h2>Black Canyon Country Club - Scorecard</h2>
+                <h2>Club: Black Mountain Country Club - Scorecard</h2>
+                <h3>Course: East-North</h3>
+                <h3>Tee Box: 65-Men</h3>
                 <table>
                     <thead>
-                        <tr>
-                            <th>Hole</th>
-                            <th>Par</th>
-                            <th>Score</th>
-                        </tr>
+                        <tr> <th colspan="11">First Course</th> <th colspan="11">Second Course</th> </tr>
+                        <tr> <th>Hole</th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th> <th>6</th> <th>7</th> <th>8</th> <th>9</th> <th>OUT</th> <th>10</th> <th>11</th> <th>12</th> <th>13</th> <th>14</th> <th>15</th> <th>16</th> <th>17</th> <th>18</th> <th>IN</th> <th>TOTAL</th> </tr>
                     </thead>
                     <tbody>
-                        <!-- Front Nine -->
-                        <tr><td>1</td><td class="par">4</td><td><input type="number" class="score-input" min="1"></td></tr>
-                        <tr><td>2</td><td class="par">5</td><td><input type="number" class="score-input" min="1"></td></tr>
-                        <tr><td>3</td><td class="par">3</td><td><input type="number" class="score-input" min="1"></td></tr>
-                        <tr><td>4</td><td class="par">4</td><td><input type="number" class="score-input" min="1"></td></tr>
-                        <tr><td>5</td><td class="par">4</td><td><input type="number" class="score-input" min="1"></td></tr>
-                        <tr><td>6</td><td class="par">3</td><td><input type="number" class="score-input" min="1"></td></tr>
-                        <tr><td>7</td><td class="par">5</td><td><input type="number" class="score-input" min="1"></td></tr>
-                        <tr><td>8</td><td class="par">4</td><td><input type="number" class="score-input" min="1"></td></tr>
-                        <tr><td>9</td><td class="par">4</td><td><input type="number" class="score-input" min="1"></td></tr>
-                        <!-- Back Nine -->
-                        <tr><td>10</td><td class="par">4</td><td><input type="number" class="score-input" min="1"></td></tr>
-                        <tr><td>11</td><td class="par">4</td><td><input type="number" class="score-input" min="1"></td></tr>
-                        <tr><td>12</td><td class="par">3</td><td><input type="number" class="score-input" min="1"></td></tr>
-                        <tr><td>13</td><td class="par">5</td><td><input type="number" class="score-input" min="1"></td></tr>
-                        <tr><td>14</td><td class="par">4</td><td><input type="number" class="score-input" min="1"></td></tr>
-                        <tr><td>15</td><td class="par">4</td><td><input type="number" class="score-input" min="1"></td></tr>
-                        <tr><td>16</td><td class="par">3</td><td><input type="number" class="score-input" min="1"></td></tr>
-                        <tr><td>17</td><td class="par">5</td><td><input type="number" class="score-input" min="1"></td></tr>
-                        <tr><td>18</td><td class="par">4</td><td><input type="number" class="score-input" min="1"></td></tr>
-                        <tr class="total-row">
-                            <th>Total</th>
-                            <td id="totalPar">72</td>
+                        <!-- Tee Box / Yard -->
+                        <tr class="gold"> <td class="yard">Gold</td>
+							<td class="yard">403</td> <td class="yard">478</td> <td class="yard">155</td> <td class="yard">361</td> <td class="yard">372</td> <td class="yard">576</td> <td class="yard">409</td> <td class="yard">154</td> <td class="yard">411</td> <td class="yard">3319</td>
+							<td class="yard">372</td> <td class="yard">154</td> <td class="yard">400</td> <td class="yard">532</td> <td class="yard">168</td> <td class="yard">341</td> <td class="yard">329</td> <td class="yard">323</td> <td class="yard">512</td> <td class="yard">3131</td>
+                            <td class="yard">6450</td> </tr>
+                        <tr class="blue"> <td class="yard">Blue</td>
+							<td class="yard">403</td> <td class="yard">478</td> <td class="yard">155</td> <td class="yard">361</td> <td class="yard">372</td> <td class="yard">576</td> <td class="yard">409</td> <td class="yard">154</td> <td class="yard">411</td> <td class="yard">3319</td>
+							<td class="yard">372</td> <td class="yard">154</td> <td class="yard">400</td> <td class="yard">532</td> <td class="yard">168</td> <td class="yard">341</td> <td class="yard">329</td> <td class="yard">323</td> <td class="yard">512</td> <td class="yard">3131</td>
+                            <td class="yard">6450</td> </tr>
+                        <tr class="white"> <td class="yard">White</td>
+							<td class="yard">403</td> <td class="yard">478</td> <td class="yard">155</td> <td class="yard">361</td> <td class="yard">372</td> <td class="yard">576</td> <td class="yard">409</td> <td class="yard">154</td> <td class="yard">411</td> <td class="yard">3319</td>
+							<td class="yard">372</td> <td class="yard">154</td> <td class="yard">400</td> <td class="yard">532</td> <td class="yard">168</td> <td class="yard">341</td> <td class="yard">329</td> <td class="yard">323</td> <td class="yard">512</td> <td class="yard">3131</td>
+                            <td class="yard">6450</td> </tr>
+                        <tr class="red"> <td class="yard">Red</td>
+							<td class="yard">403</td> <td class="yard">478</td> <td class="yard">155</td> <td class="yard">361</td> <td class="yard">372</td> <td class="yard">576</td> <td class="yard">409</td> <td class="yard">154</td> <td class="yard">411</td> <td class="yard">3319</td>
+							<td class="yard">372</td> <td class="yard">154</td> <td class="yard">400</td> <td class="yard">532</td> <td class="yard">168</td> <td class="yard">341</td> <td class="yard">329</td> <td class="yard">323</td> <td class="yard">512</td> <td class="yard">3131</td>
+                            <td class="yard">6450</td> </tr>
+                        <!-- Par and Index -->
+                        <tr class="par"> <td class="par">Par</td>
+							<td class="par">4</td> <td class="par">5</td> <td class="par">3</td> <td class="par">4</td> <td class="par">4</td> <td class="par">5</td> <td class="par">4</td> <td class="par">3</td> <td class="par">4</td> <td class="par">36</td>
+							<td class="par">4</td> <td class="par">3</td> <td class="par">4</td> <td class="par">5</td> <td class="par">3</td> <td class="par">4</td> <td class="par">4</td> <td class="par">4</td> <td class="par">5</td> <td class="par">36</td>
+                            <td id="totalPar">72</td> </tr>
+                        <tr class="hdi"> <td class="hdi">Index</td>
+							<td class="hdi">7</td> <td class="hdi">13</td> <td class="hdi">15</td> <td class="hdi">11</td> <td class="hdi">1</td> <td class="hdi">9</td> <td class="hdi">5</td> <td class="hdi">17</td> <td class="hdi">3</td> <td class="hdi">81</td>
+							<td class="hdi">6</td> <td class="hdi">10</td> <td class="hdi">2</td> <td class="hdi">8</td> <td class="hdi">14</td> <td class="hdi">4</td> <td class="hdi">18</td> <td class="hdi">16</td> <td class="hdi">12</td> <td class="hdi">90</td>
+                            <td id="totalHDI">171</td> </tr>
+                        <!-- Player(s) input scores -->
+                        <tr> <td>Score</td>
+                            <!-- Front Nine -->
+                            <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1">
+                            <td id="totalScoreOut">0</td>
+                            <!-- Back Nine -->
+                            <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1">
+                            <td id="totalScoreIn">0</td>
                             <td id="totalScore">0</td>
                         </tr>
+                        <!-- Additional info (Putts Bunker Penalty etc.) -->
+                        <tr class="put"> <td>Putts</td>
+							<td>2</td> <td>2</td> <td>1</td> <td>2</td> <td>2</td> <td>2</td> <td>1</td> <td>2</td> <td>2</td> <td>16</td>
+							<td>2</td> <td>1</td> <td>2</td> <td>2</td> <td>2</td> <td>1</td> <td>2</td> <td>2</td> <td>2</td> <td>16</td>
+							<td>32</td> </tr>
+                        <tr class="bnk"> <td>Bunker</td>
+							<td>0</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>3</td>
+							<td>0</td> <td>1</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> <td>0</td> <td>2</td>
+							<td>5</td> </tr>
+                        <tr class="pnt"> <td>Penalty</td>
+							<td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td>
+							<td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>2</td>
+							<td>3</td> </tr>
+                        <!-- Fairways -->
+                        <tr class="fwy"> <td>Fairways</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> </tr>
                     </tbody>
                 </table>
                 <div class="button-container">
@@ -81,6 +96,18 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
             `;
 
+document.addEventListener('DOMContentLoaded', function () {
+    const dynamicContent = document.getElementById('dynamic-content');
+
+    //dynamicContent.innerHTML = profileHTML();
+    dynamicContent.innerHTML = roundEntryHTML();
+
+    document.getElementById('profile').addEventListener('click', function () {
+        dynamicContent.innerHTML = profileHTML();
+    });
+
+    document.getElementById('roundEntry').addEventListener('click', function () {
+        dynamicContent.innerHTML = roundEntryHTML();
         document.getElementById('calculateTotalScore').addEventListener('click', function () {
             const scoreInputs = document.querySelectorAll('.score-input');
             let totalScore = 0;
@@ -94,10 +121,10 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('totalScore').textContent = totalScore;
             if (userProfile.handicapArray.length > 0) {
                 const sum = userProfile.handicapArray.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-                userProfile.averageHandicap = sum / userProfile.handicapArray.length; 
+                userProfile.averageHandicap = sum / userProfile.handicapArray.length;
             }
         });
-        
+
     });
 
     document.getElementById('calculateHandicap').addEventListener('click', function () {

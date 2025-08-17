@@ -114,9 +114,19 @@
     margin-bottom: 20px;
 }
 
+.scorecard-container thead {
+    background-color: #1a4d2e;
+    color: #FFE694;
+    th, td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+    }
+}
+
 .scorecard-container th,
 .scorecard-container td {
-    border: 1px solid #ddd;
+    border: 1px solid #73737383;
     padding: 10px;
     text-align: center;
 }
@@ -126,6 +136,15 @@
     border: none;
     text-align: center;
     box-sizing: border-box;
+}
+
+.scorecard-container tr {
+    &.gold { background-color: #f7c455; }
+    &.blue { background-color: #46a8f3; }
+    &.white { background-color: white; }
+    &.red { background-color: #d33b4a; }
+    &.par, &.hdi { background-color: #eee5cf; }
+    &.put, &.bnk, &.pnt, &.fwy { background-color: #e0e0e0; }
 }
 
 .button-container {
