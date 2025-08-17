@@ -1,8 +1,10 @@
+import { createScoreTable } from './createTable.js';
+
 let userProfile = {
     username: "Mister Onegolf",
     email: "useruser@hotmail.com",
     profilePic: "/public/images/close-up-golf-player.jpg",
-    role: "Golfer",
+    role: "golfer",
     roundsPlayed: 0,
     handicapArray: [],
     averageHandicap: 0
@@ -22,11 +24,17 @@ const profileHTML = () => `
                     <span> Rounds Played: ${userProfile.roundsPlayed}</span>
                     <span> Average Handicap: ${userProfile.averageHandicap}</span>
                 </div>
-                <div class=profileTrophy></div>
+                <div class=profileTrophy>
+                    <span>Golf History</span>
+                    ${createScoreTable(userProfile.handicapArray)}
+                </div>
             </div>
         `;
 
 document.addEventListener('DOMContentLoaded', function () {
+
+
+
     const dynamicContent = document.getElementById('dynamic-content');
 
     dynamicContent.innerHTML = profileHTML();
@@ -81,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
             `;
 
+        // Add event listener for the Calculate Score button
         document.getElementById('calculateTotalScore').addEventListener('click', function () {
             const scoreInputs = document.querySelectorAll('.score-input');
             let totalScore = 0;
@@ -94,10 +103,10 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('totalScore').textContent = totalScore;
             if (userProfile.handicapArray.length > 0) {
                 const sum = userProfile.handicapArray.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-                userProfile.averageHandicap = sum / userProfile.handicapArray.length; 
+                userProfile.averageHandicap = sum / userProfile.handicapArray.length;
             }
         });
-        
+
     });
 
     document.getElementById('calculateHandicap').addEventListener('click', function () {
@@ -112,9 +121,72 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('setting').addEventListener('click', function () {
         dynamicContent.innerHTML = `
-            <h2>Settings</h2>
-            <p>Manage your account settings here.</p>
+            <div id="settingForm" class="auth-form">
+                <h3>Register</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="register-name">Full Name:</label>
+                        <input type="text" id="register-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user-avatar">Profile Picture:</label>
+                        <input type="file" id="user-avatar" name="avatar" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email:</label>
+                        <input type="email" id="register-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="setting-role">Roles:</label><br>
+                        <input type="radio" id="golfer" name="role" value="golfer">
+                        <label for="golfer">Golfer</label><br>
+                        <input type="radio" id="associate" name="role" value="associate">
+                        <label for="associate">Associate</label><br>
+                    </div>
+                    <button type="submit" class="btn btn-green">Confirm change</button>
+                </form>
+            </div>
         `;
+
+        // Pre-fill form with existing user data
+        document.querySelector('#register-name').value = userProfile.username;
+        document.querySelector('#register-email').value = userProfile.email;
+        // Set radio button based on current role
+        const roleInput = document.querySelector(`input[value="${userProfile.role}"]`);
+        if (roleInput) {
+            roleInput.checked = true;
+        }
+
+        // Get the form element
+        const settingForm = document.querySelector('#settingForm form');
+
+        // Add submit event listener to the form
+        settingForm.addEventListener('submit', function (event) {
+            // Prevent the default form submission
+            event.preventDefault();
+
+            // Get values from form inputs
+            const newName = document.querySelector('#register-name').value;
+            const newEmail = document.querySelector('#register-email').value;
+            const roleInputs = document.querySelectorAll('input[name="role"]');
+            let selectedRole = '';
+
+            // Get selected role
+            for (const radioButton of roleInputs) {
+                if (radioButton.checked) {
+                    selectedRole = radioButton.value;
+                    break;
+                }
+            }
+
+            // Capitalize first letter of role
+            selectedRole = selectedRole.charAt(0).toUpperCase() + selectedRole.slice(1);
+
+            // Update userProfile object
+            userProfile.username = newName;
+            userProfile.email = newEmail;
+            userProfile.role = selectedRole;
+        });
     });
 
 
