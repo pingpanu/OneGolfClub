@@ -16,17 +16,21 @@
             </div>
             <div class="profile">
                 <img src ="public/images/user-avatar.png" class="avatar">
-                <span>Welcome: useruser</span>
+                <span class="welcome_message">Welcome: useruser</span>
+                <button id="logout" class="btn btn-light">Logout</button>
             </div>
         </div>
     </header>
 
     <main>
         <section class="user-page">
-            <div class="user-menu">
-
+            <div class="sidebar" id="sidebar">
+                <button id="profile" class="sidebar-button"><h2>Profile</h2></button>
+                <button id="roundEntry" class="sidebar-button"><h2>Round Entry</h2></button>
+                <button id="calculateHandicap" class="sidebar-button"><h2>Handicap</h2></button>
+                <button id="setting" class="sidebar-button"><h2>Setting</h2></button>
             </div>
-            <div class="user-dynamic-content"></div>
+            <div class="dynamic-content" id="dynamic-content"></div>
         </section>
     </main>
 

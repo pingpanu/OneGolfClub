@@ -1,3 +1,5 @@
+"use strict";
+
 const formTemplates = {
     signInForm: `
         <div id="signInForm" class="auth-form" onclick="event.stopPropagation()">
