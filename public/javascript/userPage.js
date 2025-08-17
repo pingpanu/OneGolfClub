@@ -8,7 +8,7 @@ let userProfile = {
     averageHandicap: 0
 };
 
-const profileHTML = `
+const profileHTML = () => `
             <div class="profileDynamicDiv">
                 <div class=profileImage>
                     <img src=${userProfile.profilePic} alt="Profile Picture">
@@ -29,10 +29,10 @@ const profileHTML = `
 document.addEventListener('DOMContentLoaded', function () {
     const dynamicContent = document.getElementById('dynamic-content');
 
-    dynamicContent.innerHTML = profileHTML;
+    dynamicContent.innerHTML = profileHTML();
 
     document.getElementById('profile').addEventListener('click', function () {
-        dynamicContent.innerHTML = profileHTML;
+        dynamicContent.innerHTML = profileHTML();
     });
 
     document.getElementById('roundEntry').addEventListener('click', function () {
@@ -92,20 +92,18 @@ document.addEventListener('DOMContentLoaded', function () {
             userProfile.roundsPlayed++;
             userProfile.handicapArray.push(totalScore);
             document.getElementById('totalScore').textContent = totalScore;
+            if (userProfile.handicapArray.length > 0) {
+                const sum = userProfile.handicapArray.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+                userProfile.averageHandicap = sum / userProfile.handicapArray.length; 
+            }
         });
+        
     });
 
     document.getElementById('calculateHandicap').addEventListener('click', function () {
         dynamicContent.innerHTML = `
             <img src="public/images/hi_card.png" class="handicapImage">
         `;
-
-        if (userProfile.handicapArray.length === 0) {
-            userProfile.averageHandicap = 0; 
-        } else {
-            const sum = userProfile.handicapArray.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-            userProfile.averageHandicap = sum / userProfile.handicapArray.length;
-        }
     });
 
     document.getElementById('logout').addEventListener('click', function () {
