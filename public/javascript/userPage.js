@@ -151,9 +151,13 @@ document.addEventListener('DOMContentLoaded', function () {
             let totalScore = document.getElementById('totalScore').textContent;
             userProfile.roundsPlayed++;
             userProfile.handicapArray.push(totalScore);
-            if (userProfile.handicapArray.length > 0) {
-                const sum = userProfile.handicapArray.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-                userProfile.averageHandicap = sum / userProfile.handicapArray.length;
+            if (userProfile.roundsPlayed > 0) {
+                let sum = 0;
+                userProfile.handicapArray.forEach(number => {
+                    sum += parseInt(number, 10);
+                });
+                console.log(`sum = ${sum}`);
+                userProfile.averageHandicap = parseInt(sum / userProfile.roundsPlayed, 10);
             }
         });
     });
@@ -171,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('setting').addEventListener('click', function () {
         dynamicContent.innerHTML = `
             <div id="settingForm" class="auth-form">
-                <h3>Register</h3>
+                <h3>Profile Setting</h3>
                 <form>
                     <div class="form-group">
                         <label for="register-name">Full Name:</label>
