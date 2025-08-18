@@ -31,7 +31,17 @@ const profileHTML = () => `
             </div>
         `;
 
-const roundEntryHTML = () => `
+document.addEventListener('DOMContentLoaded', function () {
+    const dynamicContent = document.getElementById('dynamic-content');
+
+    dynamicContent.innerHTML = profileHTML();
+
+    document.getElementById('profile').addEventListener('click', function () {
+        dynamicContent.innerHTML = profileHTML();
+    });
+
+    document.getElementById('roundEntry').addEventListener('click', function () {
+        dynamicContent.innerHTML = `
         <div class="scorecard-container">
                 <h2>Club: Black Mountain Country Club - Scorecard</h2>
                 <h3>Course: East-North</h3>
@@ -92,7 +102,11 @@ const roundEntryHTML = () => `
 							<td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>2</td>
 							<td>3</td> </tr>
                         <!-- Fairways -->
-                        <tr class="fwy"> <td>Fairways</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> <td>L</td> </tr>
+                        <tr class="fwy"> <td>Fairways</td>
+                            <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td>
+                            <td></td>
+                            <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td>
+                            <td colspan="2"></td>
                     </tbody>
                 </table>
                 <div class="button-container">
@@ -100,18 +114,6 @@ const roundEntryHTML = () => `
                 </div>
             </div>
          `;
-
-document.addEventListener('DOMContentLoaded', function () {
-    const dynamicContent = document.getElementById('dynamic-content');
-
-    dynamicContent.innerHTML = profileHTML();
-
-    document.getElementById('profile').addEventListener('click', function () {
-        dynamicContent.innerHTML = profileHTML();
-    });
-
-    document.getElementById('roundEntry').addEventListener('click', function () {
-        dynamicContent.innerHTML = roundEntryHTML();
         // Add event listener for the Calculate Score button
         document.getElementById('calculateTotalScore').addEventListener('click', function () {
             const scoreInputs = document.querySelectorAll('.score-input');
