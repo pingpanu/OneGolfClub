@@ -140,9 +140,6 @@
         tbody tr {
             background-color: white;
             &.gold { background-color: #f7c455; }
-            &.blue { background-color: #46a8f3; }
-            &.white { background-color: white; }
-            &.red { background-color: #d33b4a; }
             &.par, &.hdi { background-color: #eee5cf; }
             &.put, &.bnk, &.pnt, &.fwy { background-color: #e0e0e0; }
         }
@@ -152,6 +149,7 @@
             border: none;
             text-align: center;
             box-sizing: border-box;
+            background-color: transparent;
         }
 
         select {

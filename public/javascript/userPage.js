@@ -54,19 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         </thead>
                         <tbody>
                             <!-- Tee Box / Yard -->
-                            <tr class="gold"> <td class="yard">Gold</td>
-                                <td class="yard">403</td> <td class="yard">478</td> <td class="yard">155</td> <td class="yard">361</td> <td class="yard">372</td> <td class="yard">576</td> <td class="yard">409</td> <td class="yard">154</td> <td class="yard">411</td> <td class="yard">3319</td>
-                                <td class="yard">372</td> <td class="yard">154</td> <td class="yard">400</td> <td class="yard">532</td> <td class="yard">168</td> <td class="yard">341</td> <td class="yard">329</td> <td class="yard">323</td> <td class="yard">512</td> <td class="yard">3131</td>
-                                <td class="yard">6450</td> </tr>
-                            <tr class="blue"> <td class="yard">Blue</td>
-                                <td class="yard">403</td> <td class="yard">478</td> <td class="yard">155</td> <td class="yard">361</td> <td class="yard">372</td> <td class="yard">576</td> <td class="yard">409</td> <td class="yard">154</td> <td class="yard">411</td> <td class="yard">3319</td>
-                                <td class="yard">372</td> <td class="yard">154</td> <td class="yard">400</td> <td class="yard">532</td> <td class="yard">168</td> <td class="yard">341</td> <td class="yard">329</td> <td class="yard">323</td> <td class="yard">512</td> <td class="yard">3131</td>
-                                <td class="yard">6450</td> </tr>
-                            <tr class="white"> <td class="yard">White</td>
-                                <td class="yard">403</td> <td class="yard">478</td> <td class="yard">155</td> <td class="yard">361</td> <td class="yard">372</td> <td class="yard">576</td> <td class="yard">409</td> <td class="yard">154</td> <td class="yard">411</td> <td class="yard">3319</td>
-                                <td class="yard">372</td> <td class="yard">154</td> <td class="yard">400</td> <td class="yard">532</td> <td class="yard">168</td> <td class="yard">341</td> <td class="yard">329</td> <td class="yard">323</td> <td class="yard">512</td> <td class="yard">3131</td>
-                                <td class="yard">6450</td> </tr>
-                            <tr class="red"> <td class="yard">Red</td>
+                            <tr class="gold"> <td class="yard">65 - Men</td>
                                 <td class="yard">403</td> <td class="yard">478</td> <td class="yard">155</td> <td class="yard">361</td> <td class="yard">372</td> <td class="yard">576</td> <td class="yard">409</td> <td class="yard">154</td> <td class="yard">411</td> <td class="yard">3319</td>
                                 <td class="yard">372</td> <td class="yard">154</td> <td class="yard">400</td> <td class="yard">532</td> <td class="yard">168</td> <td class="yard">341</td> <td class="yard">329</td> <td class="yard">323</td> <td class="yard">512</td> <td class="yard">3131</td>
                                 <td class="yard">6450</td> </tr>
@@ -91,17 +79,17 @@ document.addEventListener('DOMContentLoaded', function () {
                             </tr>
                             <!-- Additional info (Putts Bunker Penalty etc.) -->
                             <tr class="put"> <td>Putts</td>
-                                <td>2</td> <td>2</td> <td>1</td> <td>2</td> <td>2</td> <td>2</td> <td>1</td> <td>2</td> <td>2</td> <td>16</td>
-                                <td>2</td> <td>1</td> <td>2</td> <td>2</td> <td>2</td> <td>1</td> <td>2</td> <td>2</td> <td>2</td> <td>16</td>
-                                <td>32</td> </tr>
+                                <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td></td>
+                                <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td></td>
+                                <td></td> </tr>
                             <tr class="bnk"> <td>Bunker</td>
-                                <td>0</td> <td>1</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>3</td>
-                                <td>0</td> <td>1</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> <td>0</td> <td>2</td>
-                                <td>5</td> </tr>
+                                <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td></td>
+                                <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td></td>
+                                <td></td> </tr>
                             <tr class="pnt"> <td>Penalty</td>
-                                <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td>
-                                <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>1</td> <td>2</td>
-                                <td>3</td> </tr>
+                                <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td></td>
+                                <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td><input type="number" min="1"></td> <td></td>
+                                <td></td> </tr>
                             <!-- Fairways -->
                             <tr class="fwy"> <td>Fairways</td>
                                 <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td> <td> <select name="fairways"> <option value="l">L</option> <option value="r">R</option> <option value="ft">FT</option> <option value="fs">FS</option> </select> </td>
