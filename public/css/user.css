@@ -110,23 +110,34 @@
     }
 
     table {
+        font-family: "Barlow", Times, serif;
         white-space: nowrap;
         width: 100%;
         border-collapse: collapse;
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #73737383;
+        }
+
+        thead tr {
+            background-color: #1a4d2e;
+            color: #FFE694;
+            
+            th, td { border: 1px solid black; }
+        }
         
-        thead {
-            tr {
-                background-color: #1a4d2e;
-                color: #FFE694;
-            }
+        thead tr:nth-child(2), tbody tr {
             th, td {
-                border: 1px solid black;
-                padding: 10px;
-                text-align: center;
+                &:first-child {
+                font-weight: bold;
+                text-align: left;
+                }
             }
         }
 
-        tr {
+        tbody tr {
             background-color: white;
             &.gold { background-color: #f7c455; }
             &.blue { background-color: #46a8f3; }
@@ -134,14 +145,8 @@
             &.red { background-color: #d33b4a; }
             &.par, &.hdi { background-color: #eee5cf; }
             &.put, &.bnk, &.pnt, &.fwy { background-color: #e0e0e0; }
-           
-            th, td {
-                border: 1px solid #73737383;
-                padding: 10px;
-                text-align: center;
-            }
         }
-        
+
         input[type="number"] {
             width: 100%;
             border: none;
@@ -150,8 +155,8 @@
         }
 
         select {
-        border: none;
-        background-color: transparent;
+            border: none;
+            background-color: transparent;
         }
     }
 
