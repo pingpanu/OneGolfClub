@@ -81,11 +81,11 @@ document.addEventListener('DOMContentLoaded', function () {
                         <!-- Player(s) input scores -->
                         <tr> <td>Score</td>
                             <!-- Front Nine -->
-                            <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1">
-                            <td id="totalScoreOut">0</td>
+                            <td> <input type="number" class="score-input-O" min="1"> <td> <input type="number" class="score-input-O" min="1"> <td> <input type="number" class="score-input-O" min="1"> <td> <input type="number" class="score-input-O" min="1"> <td> <input type="number" class="score-input-O" min="1"> <td> <input type="number" class="score-input-O" min="1"> <td> <input type="number" class="score-input-O" min="1"> <td> <input type="number" class="score-input-O" min="1"> <td> <input type="number" class="score-input-O" min="1">
+                            <td id="totalScoreO">0</td>
                             <!-- Back Nine -->
-                            <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1"> <td> <input type="number" class="score-input" min="1">
-                            <td id="totalScoreIn">0</td>
+                            <td> <input type="number" class="score-input-I" min="1"> <td> <input type="number" class="score-input-I" min="1"> <td> <input type="number" class="score-input-I" min="1"> <td> <input type="number" class="score-input-I" min="1"> <td> <input type="number" class="score-input-I" min="1"> <td> <input type="number" class="score-input-I" min="1"> <td> <input type="number" class="score-input-I" min="1"> <td> <input type="number" class="score-input-I" min="1"> <td> <input type="number" class="score-input-I" min="1">
+                            <td id="totalScoreI">0</td>
                             <td id="totalScore">0</td>
                         </tr>
                         <!-- Additional info (Putts Bunker Penalty etc.) -->
@@ -114,18 +114,43 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             </div>
          `;
-        // Add event listener for the Calculate Score button
-        document.getElementById('calculateTotalScore').addEventListener('click', function () {
-            const scoreInputs = document.querySelectorAll('.score-input');
-            let totalScore = 0;
-            scoreInputs.forEach(input => {
+
+        // เพิ่ม event listener สำหรับ input แต่ละช่องเพื่อคำนวณคะแนนแบบ Real-time
+        const scoreInputsO = document.querySelectorAll('.score-input-O');
+        const scoreInputsI = document.querySelectorAll('.score-input-I');
+        scoreInputsO.forEach(input => {
+            input.addEventListener('input', calculatingTotalScore);
+        });
+        scoreInputsI.forEach(input => {
+            input.addEventListener('input', calculatingTotalScore);
+        });
+
+        function calculatingTotalScore() {
+            const scoreInputsO = document.querySelectorAll('.score-input-O');
+            const scoreInputsI = document.querySelectorAll('.score-input-I');
+            let totalScoreO = 0;
+            let totalScoreI = 0;
+            scoreInputsO.forEach(input => {
                 if (input.value) {
-                    totalScore += parseInt(input.value, 10);
+                    totalScoreO += parseInt(input.value, 10);
                 }
             });
+            scoreInputsI.forEach(input => {
+                if (input.value) {
+                    totalScoreI += parseInt(input.value, 10);
+                }
+            });
+            document.getElementById('totalScoreO').textContent = totalScoreO;
+            document.getElementById('totalScoreI').textContent = totalScoreI;
+            const totalScore = totalScoreO + totalScoreI;
+            document.getElementById('totalScore').textContent = totalScore;
+        }
+
+        // Add event listener for the Calculate Score button
+        document.getElementById('calculateTotalScore').addEventListener('click', function () {
+            let totalScore = document.getElementById('totalScore').textContent;
             userProfile.roundsPlayed++;
             userProfile.handicapArray.push(totalScore);
-            document.getElementById('totalScore').textContent = totalScore;
             if (userProfile.handicapArray.length > 0) {
                 const sum = userProfile.handicapArray.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
                 userProfile.averageHandicap = sum / userProfile.handicapArray.length;

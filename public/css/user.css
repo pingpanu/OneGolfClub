@@ -138,6 +138,11 @@
     box-sizing: border-box;
 }
 
+.scorecard-container select {
+    border: none;
+    background-color: transparent;
+}
+
 .scorecard-container tr {
     &.gold { background-color: #f7c455; }
     &.blue { background-color: #46a8f3; }
