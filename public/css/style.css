@@ -10,6 +10,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  background-color: #1a4d2e;
 }
 
 .container {
@@ -74,6 +75,18 @@ header nav ul li a:hover {
     color: #aed9b1; /* Lighter green on hover */
 }
 
+#navbar {
+    position: fixed;
+    z-index: 10;
+    width: 100vw;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    top: 0;
+    transition: top 0.3s;
+}
+
+#home {
+    margin-top: 110px;
+}
 .auth-buttons .btn {
     margin-left: 10px;
 }
@@ -569,6 +582,10 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 992px) {
+    #home {
+        margin-top: 217px;
+    }
+    
     .header-content {
         flex-direction: column;
         text-align: center;
