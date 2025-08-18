@@ -199,6 +199,21 @@
     align-self: center;
 }
 
+.body-dashboard {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    section {
+        flex-grow: 1;
+    }
+}
+
 .footer-dashboard {
     margin-top: 0;
 }
