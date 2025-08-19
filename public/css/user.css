@@ -196,11 +196,9 @@
 }
 
 .handicapImage {
-    height: 95%;
-    width: 95%;
-    padding-left: 1em;
-    padding-top: 1em;
-    align-self: center;
+    max-height: 95%;
+    max-width: 95%;
+    padding-top: 2em;
 }
 
 body.dashboard-page {
@@ -217,11 +215,15 @@ body.dashboard-page {
         .dynamic-content {
             display: flex;
             flex-direction: column;
-            justify-content: center;
 
             div.scorecard-container { flex-grow: 1; }
-        
-            div.auth-form { align-self: center; }
+       
+            .handicapImage { align-self: center; }
+
+            div.auth-form {
+                align-self: center;
+                margin-top: 1em;
+            }
         }
     }
 
