@@ -128,20 +128,24 @@
             th, td { border: 1px solid black; }
         }
         
-        thead tr:nth-child(2), tbody tr {
+        tbody tr {
+            background-color: white;
+            &.gold {
+                background-color: #f7c455; }
+            &.par, &.hdi {
+                background-color: #eee5cf; }
+            &.put, &.bnk, &.pnt, &.fwy {
+                background-color: #e0e0e0; }
+        }
+        
+        thead tr:nth-child(2),
+        tbody tr {
             th, td {
                 &:first-child {
                 font-weight: bold;
                 text-align: left;
                 }
             }
-        }
-
-        tbody tr {
-            background-color: white;
-            &.gold { background-color: #f7c455; }
-            &.par, &.hdi { background-color: #eee5cf; }
-            &.put, &.bnk, &.pnt, &.fwy { background-color: #e0e0e0; }
         }
 
         input[type="number"] {
@@ -199,21 +203,40 @@
     align-self: center;
 }
 
-.body-dashboard {
+body.dashboard-page {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-}
+    min-height: 100vh;
 
-main {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    section {
+    main {
         flex-grow: 1;
-    }
-}
+        display: flex;
+        flex-direction: column;
+        section.user-page { flex-grow: 1; }
+        
+        .dynamic-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
 
-.footer-dashboard {
-    margin-top: 0;
+            div.scorecard-container { flex-grow: 1; }
+        
+            div.auth-form { align-self: center; }
+        }
+    }
+
+    footer {
+        margin-top: 0;
+        padding: 20px 0 10px 0;
+        display: flex;
+        justify-content: end;
+
+        div.container {
+            margin: 0;
+            padding: 0 5px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: end;
+        }
+    }
 }
