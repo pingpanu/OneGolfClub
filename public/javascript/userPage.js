@@ -160,7 +160,49 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('calculateHandicap').addEventListener('click', function () {
         dynamicContent.innerHTML = `
-            <img src="public/images/hi_card.png" class="handicapImage">
+            <div class="handicap-container">
+                <div class="handicap-grid">
+                    <div class="name">
+                        <div>
+                            <span> Name </span>
+                            <span>
+                                <div> John Doe </div>
+                                <div> XYZ Golf Association </div>
+                            </span>
+                        </div>
+                        <div>
+                            <span> Club </span>
+                            <span> One Golf Club </span>
+                        </div>
+                    </div>
+                    <div class="date">
+                        <div>
+                            <span> Effective Date </span>
+                            <span> 1/15/16 </span>
+                        </div>
+                        <div>
+                            <span> Scores Posted </span>
+                            <span> 20 </span>
+                        </div>
+                    </div>
+                    <div class="hdi">
+                        <div class="logo"> <img src="public/images/logo.png" alt="One Golf Club Logo"> </div>
+                        <span>HANDICAP</span>
+                        <span>INDEX</span>
+                        <hr>
+                        <span>13.7</span>
+                    </div>
+                </div>
+                <table>
+                    <thead> <tr> <th colspan="6"> SCORE HISTORY - MOST RECENT FIRST*IF USED </th> </tr> </thead>
+                    <tbody>
+                        <tr> <td>1</td> <td>93</td> <td>88*</td> <td>91</td> <td>86*</td> <td>92</td> </tr>
+                        <tr> <td>6</td> <td>96*</td> <td>89</td> <td>92</td> <td>92</td> <td>88*</td> </tr>
+                        <tr> <td>11</td> <td>90*</td> <td>89*</td> <td>98</td> <td>97*A</td> <td>89*</td> </tr>
+                        <tr> <td>16</td> <td>84*</td> <td>96</td> <td>86</td> <td>87*A</td> <td>93.</td> </tr>
+                    </tbody>
+                </table>
+            </div>
         `;
     });
 

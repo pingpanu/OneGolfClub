@@ -196,10 +196,73 @@
     color: #333;
 }
 
-.handicapImage {
-    max-height: 95%;
-    max-width: 95%;
-    padding-top: 2em;
+.handicap-container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: fit-content;
+    margin-top: 2em;
+
+    border: 3px solid navy ;
+    border-radius: 15px;
+
+    .handicap-grid {
+        padding: 1em 1em 0 1em;
+        display: grid;
+        grid-template-columns: 300px 100px 120px;
+        grid-template-rows:    100px 50px;
+        grid-template-areas: "name . hdi"
+                             "date . hdi";
+        .name, .date, .hdi {
+            div { display: flex; }
+            span:first-child ~ span { font-weight: 800; }
+        }
+
+        .name {
+            grid-area: name;
+            span:first-child { min-width: 80px; }
+        }
+        .date {
+            grid-area: date;
+            span:first-child { min-width: 170px; }
+        }
+        .hdi {
+            grid-area: hdi;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            position: relative;
+            top: -25px;
+            span, hr {
+                position: relative;
+                top: -20px;
+            }
+            
+            line-height: 1.4;
+            hr { width: 100%; margin: 0;}
+            .logo img {
+                height: 120px;
+                margin: 0;
+            }
+        }
+    }
+
+    table {
+        border-radius: 15px;
+        background-color: white;
+        width: 100%;
+        border-collapse: collapse;
+
+        thead {
+            background-color: rgb(19, 19, 99);
+            color: white;
+        }
+        tbody td {
+            padding: 0 1em;
+        }
+    }
 }
 
 body.dashboard-page {
