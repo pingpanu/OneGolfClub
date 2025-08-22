@@ -135,7 +135,7 @@
                 background-color: #f7c455; }
             &.par, &.hdi {
                 background-color: #eee5cf; }
-            &.put, &.bnk, &.pnt, &.fwy {
+            &.put, &.bnk, &.pnt, &.fwy ,&.gir {
                 background-color: #e0e0e0; }
         }
         
